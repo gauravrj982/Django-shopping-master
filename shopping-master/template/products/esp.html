@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %} 
+
+<h1>ESP CAM DATA</h1>
+
+<div class='row'>
+{% for image in image_data %}
+<div class="col-md-4">
+<div class="thumbnail">
+    <img src="{{image.photo.url}}" alt="Image not found">
+<div class="caption">
+    <h4>Date :{{image.date_created| date:"d-D-Y"}}</h4>
+    <h4> Day :{{image.date_created| date:"l"}}</h4>
+    <h4>Time :{{image.date_created| time:"H:i A"}}</h4>
+  
+    </div>
+</div>
+</div>
+{% endfor %}
+</div>
+
+
+
+
+
+
+
+{%endblock%}
